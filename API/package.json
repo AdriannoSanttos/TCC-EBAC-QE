@@ -1,9 +1,12 @@
 {
-  "name": "api",
+  "name": "tcc-ebac-api-cupons",
   "version": "1.0.0",
+  "description": "Testes de API - US-0003 Cupons",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:verbose": "jest --verbose",
+    "test:report": "jest --json --outputFile=reports/test-results.json"
   },
   "devDependencies": {
     "jest": "^29.0.0",
@@ -13,6 +16,8 @@
     "testEnvironment": "node",
     "testMatch": [
       "**/tests/**/*.test.js"
-    ]
+    ],
+    "verbose": true,
+    "collectCoverage": false
   }
 }

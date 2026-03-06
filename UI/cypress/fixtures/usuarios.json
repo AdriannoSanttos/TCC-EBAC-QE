@@ -1,0 +1,14 @@
+{
+  "usuarioValido": {
+    "username": "irmaodojorel@teste.com.br",
+    "password": "teste@002"
+  },
+  "usuarioInvalido": {
+    "username": "irmaodojorel@teste.com.br", 
+    "password": "senhaErrada123"
+  },
+  "usuarioInexistente": {
+    "username": "usuarioinexistente@teste.com",
+    "password": "qualquerSenha123"
+  }
+}

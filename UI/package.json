@@ -1,14 +1,13 @@
 {
-  "name": "ui",
+  "name": "tcc-ebac-ui-tests",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Testes de UI - US-0001 (Carrinho) e US-0002 (Login)",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "test:open": "cypress open",
+    "test:chrome": "cypress run --browser chrome",
+    "test:headless": "cypress run --headless"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
     "cypress": "^15.11.0"
   }

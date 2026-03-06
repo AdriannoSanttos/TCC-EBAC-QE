@@ -1,0 +1,17 @@
+{
+  "produtoValido": {
+    "nome": "Ingrid Running Jacket",
+    "tamanho": "XS",
+    "cor": "Orange",
+    "url": "http://lojaebac.ebaconline.art.br"
+  },
+  "produtoForaEstoque": {
+    "tamanho": "XL",
+    "cor": "White"
+  },
+  "quantidades": {
+    "acimaLimite": 11,
+    "cupom10": 3,
+    "cupom15": 8
+  }
+}
