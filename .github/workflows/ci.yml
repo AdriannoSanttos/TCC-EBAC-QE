@@ -1,0 +1,81 @@
+name: CI - Testes Automatizados
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: 
+
+jobs:
+  api-tests:
+    name: Testes de API
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Instalar dependências (API)
+        working-directory: ./API
+        run: npm install
+        
+      - name: Executar testes de API
+        working-directory: ./API
+        run: npm test
+
+  ui-tests:
+    name: Testes Web (Cypress)
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Instalar dependências (UI)
+        working-directory: ./UI
+        run: npm install
+        
+      - name: Executar testes UI
+        working-directory: ./UI
+        run: npm test
+
+  performance-tests:
+    name: Testes de Performance (K6)
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Executar testes K6
+        working-directory: ./Performance
+        run: |
+          docker run --rm -v $PWD:/src grafana/k6 run /src/scripts/cupons.js
+
+  mobile-tests:
+    name: Testes Mobile
+    runs-on: macos-latest 
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Instalar dependências (Mobile)
+        working-directory: ./Mobile
+        run: npm install
+        
+      - name: Executar testes Mobile
+        working-directory: ./Mobile
+        run: npm test
